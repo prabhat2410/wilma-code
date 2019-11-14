@@ -1,0 +1,11 @@
+stages:
+- name: build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: extras/docker/Dockerfile
+      buildContext: .
+      tag: wilma_img:7.7
+      pushRemote: true
+      registry: 192.168.100.176:5000
+timeout: 60
+notification: {}
