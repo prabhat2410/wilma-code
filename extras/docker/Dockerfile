@@ -33,16 +33,11 @@ WORKDIR /
 RUN  	apt-get update && \
   	apt-get install -y  --no-install-recommends unzip && \
   	curl https://github.com/"${GITHUB_ACCOUNT}"/"${GITHUB_REPOSITORY}"/archive/"${RELEASE}".zip -L -s -o source.zip  && \
-  	apt-get install wget && \
-	wget https://github.com/ging/fiware-pep-proxy/archive/FIWARE_7.7.zip && \
-	#unzip source.zip && \
-	unzip FIWARE_7.7.zip && \
-	rm FIWARE_7.7.zip && \
+  	git clone https://github.com/prabhat2410/wilma-code.git && \
 	#mv "${GITHUB_REPOSITORY}"-"${RELEASE}" /opt/fiware-pep-proxy && \
 	#rm -rf "${GITHUB_REPOSITORY}"-"${RELEASE}" && \
-	mv fiware-pep-proxy-FIWARE_7.7 /opt/fiware-pep-proxy && \
+	mv wilma-code /opt/wilma-code && \
 	apt-get clean && \
-	apt-get remove -y unzip && \
 	apt-get -y autoremove
 
 
@@ -53,17 +48,10 @@ RUN  	apt-get update && \
 # COPY extras/docker/config.js.template  /opt/fiware-pep-proxy/config.js
 
 # Copy config file from the same Directory.
-COPY config.js.template /opt/fiware-pep-proxy/config.js
+COPY config.js.template /opt/wilma-code/config.js
 
 # Run PEP Proxy
-WORKDIR /opt/fiware-pep-proxy
-
-RUN apt-get install -y  --no-install-recommends make gcc g++ python && \
-	npm install --production --silent && \
-	rm -rf /root/.npm/cache/* && \
-	apt-get clean && \
-	apt-get remove -y make gcc g++ python  && \
-	apt-get -y autoremove
+WORKDIR /opt/wilma-code
 
 # Ports used by idm
 EXPOSE ${PEP_PROXY_PORT:-5554}
