@@ -1,18 +1,18 @@
 ARG NODE_VERSION=10.15.3
 FROM node:${NODE_VERSION}
-ARG GITHUB_ACCOUNT=ging
-ARG GITHUB_REPOSITORY=fiware-pep-proxy
-ARG DOWNLOAD_TYPE=7.7
+#ARG GITHUB_ACCOUNT=ging
+#ARG GITHUB_REPOSITORY=fiware-pep-proxy
+#ARG DOWNLOAD_TYPE=7.7
 
 # Automated Docker file for Docker Hub
 # This will retrieve the source code of the latest tagged release from GitHub
 
-MAINTAINER FIWARE Wilma PEP Proxy Team. DIT-UPM
+#MAINTAINER FIWARE Wilma PEP Proxy Team. DIT-UPM
 
 WORKDIR /opt
 
-ENV GITHUB_ACCOUNT=${GITHUB_ACCOUNT}
-ENV GITHUB_REPOSITORY=${GITHUB_REPOSITORY}
+#ENV GITHUB_ACCOUNT=${GITHUB_ACCOUNT}
+#ENV GITHUB_REPOSITORY=${GITHUB_REPOSITORY}
 
 WORKDIR /
 
@@ -32,7 +32,7 @@ WORKDIR /
 #    if [ ${DOWNLOAD_TYPE} = "latest" ] ; then echo "INFO: Building Latest Development"; else echo "INFO: Building Release: ${RELEASE}"; fi && \
 RUN  	apt-get update && \
   	apt-get install -y  --no-install-recommends unzip && \
-  	curl https://github.com/"${GITHUB_ACCOUNT}"/"${GITHUB_REPOSITORY}"/archive/"${RELEASE}".zip -L -s -o source.zip  && \
+  	#curl https://github.com/"${GITHUB_ACCOUNT}"/"${GITHUB_REPOSITORY}"/archive/"${RELEASE}".zip -L -s -o source.zip  && \
   	git clone https://github.com/prabhat2410/wilma-code.git && \
 	#mv "${GITHUB_REPOSITORY}"-"${RELEASE}" /opt/fiware-pep-proxy && \
 	#rm -rf "${GITHUB_REPOSITORY}"-"${RELEASE}" && \
