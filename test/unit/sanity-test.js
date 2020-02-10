@@ -1,12 +1,20 @@
 //const should = require('should');
 //const mocha = require('mocha');
 
-process.env.PEP_PROXY_IDM_PORT = 3000;
+/* Richa: process.env.PEP_PROXY_IDM_PORT = 3000;
 process.env.PEP_PROXY_IDM_HOST = 'localhost';
 process.env.PEP_PROXY_IDM_SSL_ENABLED = false;
 process.env.PEP_PROXY_USERNAME =
   'pep_proxy_00000000-0000-0000-0000-000000000000';
 process.env.PEP_PASSWORD = 'test';
+*/
+
+process.env.PEP_PROXY_IDM_PORT = 3000;
+process.env.PEP_PROXY_IDM_HOST = '192.168.100.171';
+process.env.PEP_PROXY_IDM_SSL_ENABLED = false;
+process.env.PEP_PROXY_USERNAME =
+  'pep_proxy_0cc0f32e-7345-4c95-b1d3-4136e248fdad';
+process.env.PEP_PASSWORD = 'pep_proxy_9c395ca1-00e5-4525-af04-bec27cccbe23';
 
 const config = require('./../../config');
 const IDM = require('./../../lib/idm.js').IDM;
