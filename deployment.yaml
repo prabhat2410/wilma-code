@@ -1,41 +1,36 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: wilma
+  #namespace: test
+  namespace: default
+  name: wilma1
 spec:
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
-        name: wilma
+        name: wilma1
     spec:
       containers:
       - env:
         - name: PEP_PASSWORD
-          value: pep_proxy_c5dd510a-6ec3-4eab-b638-8c7ba531e011
+          value: pep_proxy_721d70f7-5bae-4559-b6d7-37c677f250e1
         - name: PEP_PROXY_APP_HOST
-          value: 192.168.100.171
+          value: iot-agent
         - name: PEP_PROXY_APP_ID
-          value: 8b8b38b6-052c-40b7-bea0-07c7ad2d76b2
+          value: 1f43a0f5-3efd-4276-9834-f50517a4c548
         - name: PEP_PROXY_APP_PORT
-          value: "7896"
+          value: "30190"
         - name: PEP_PROXY_IDM_HOST
-          value: 192.168.100.171
+          value: 172.30.70.53
         - name: PEP_PROXY_IDM_PORT
-          value: "30510"
+          value: "30999"
         - name: PEP_PROXY_PORT
-          value: "5554"
+          value: "5556"
         - name: PEP_PROXY_USERNAME
-          value: pep_proxy_51ad73c2-320d-46c5-b418-e61169bbcc4d
-        image: csp2-centos-4:5000/fiware-wilma
-        resources:
-         limits:
-          memory: "500Mi"
-          cpu: "500m"
-         requests:
-          memory: "250Mi"
-          cpu: "250m"
-        imagePullPolicy: IfNotPresent
-        name: wilma
+          value: pep_proxy_4d353464-bc27-412c-b7ea-b9e4035620f7
+        #image: 172.30.76.49:5000/wilma 
+        image: 172.30.76.49:5000/wilma_image:7.7
+        name: wilma1
         ports:
-        - containerPort: 5554
+        - containerPort: 5556
