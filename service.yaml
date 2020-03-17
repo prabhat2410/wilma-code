@@ -11,7 +11,7 @@ spec:
   ports:
   - name: "5556"
     port: 5556
-    nodePort: 30193
+    nodePort: 30196
   selector:
     name: wilma1
 
