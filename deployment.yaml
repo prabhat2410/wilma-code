@@ -20,7 +20,7 @@ spec:
         - name: PEP_PROXY_APP_ID
           value: 1f43a0f5-3efd-4276-9834-f50517a4c548
         - name: PEP_PROXY_APP_PORT
-          value: "30190"
+          value: "30193"
         - name: PEP_PROXY_IDM_HOST
           value: 172.30.70.53
         - name: PEP_PROXY_IDM_PORT
