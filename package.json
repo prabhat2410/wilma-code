@@ -26,7 +26,7 @@
     "istanbul": "1.0.0-alpha.2",
     "lint-staged": "^7.3.0",
     "memfs": "2.9.0",
-    "mocha": "^2.5.3",
+    "mocha": "^10.1.0",
     "nock": "9.0.14",
     "prettier": "^1.14.2",
     "remark-cli": "^6.0.1",
